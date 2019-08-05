@@ -1,0 +1,12 @@
+version: '2'
+services:
+  web:
+    build: .
+    ports:
+      - "80:80"
+    volumes:
+      - .:/src/app
+    environment:
+      - NODE_SERVER_PORT=${NODE_SERVER_PORT}
+      
+    command: forever index.js
