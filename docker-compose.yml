@@ -6,7 +6,7 @@ services:
       - "80:80"
     volumes:
       - .:/src/app
-    environment:
-      - NODE_SERVER_PORT=${NODE_SERVER_PORT}
+    env_file:
+     - .env
       
     command: forever index.js
